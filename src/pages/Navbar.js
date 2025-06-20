@@ -1,24 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Navbar = () => {
+  const [navtoggle, setNavToggle] = useState(false);
   return (
-    <div class="container-fluid">
-      <nav class="navbar navbar-inverse">
-        <div class="navbar-header">
+    <div className="container-fluid">
+      <nav className="navbar navbar-inverse">
+        <div className="navbar-header">
           <button
             type="button"
-            class="navbar-toggle"
+            className="navbar-toggle"
             data-toggle="collapse"
             data-target="#myNavbar"
+            onClick={()=>setNavToggle(!navtoggle)}
           >
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+            <span className="icon-bar"></span>
+            <span className="icon-bar"></span>
+            <span className="icon-bar"></span>
           </button>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav">
-            <li class="active">
+        <div
+          className={
+            navtoggle == true
+              ? "collapse navbar-collapse in"
+              : "collapse navbar-collapse"
+          }
+          id="myNavbar"
+          aria-expanded={navtoggle == true ? "true" : "false"}
+        >
+          <ul className="nav navbar-nav">
+            <li className="active">
               <a href="index.html">Home</a>
             </li>
             <li>
@@ -62,16 +72,16 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
-          <ul class="nav navbar-nav navbar-right">
+          <ul className="nav navbar-nav navbar-right">
             <li>
               <a href="Login.html">
-                <span class="glyphicon glyphicon-log-in"></span>
+                <span className="glyphicon glyphicon-log-in"></span>
                 &nbsp;&nbsp;Login
               </a>
             </li>
             <li>
               <a href="https://trinity.schoolhour.in/signin/index">
-                <span class="glyphicon glyphicon-log-in"></span>
+                <span className="glyphicon glyphicon-log-in"></span>
                 &nbsp;&nbsp;School Login
               </a>
             </li>
