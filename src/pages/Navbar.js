@@ -1,7 +1,21 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [navtoggle, setNavToggle] = useState(false);
+  const navbar = [
+    {
+      id: 1,
+      label: "Home",
+      to: "/",
+    },
+
+    {
+      id: 2,
+      label: "News",
+      to: "/News",
+    },
+  ];
   return (
     <div className="container-fluid">
       <nav className="navbar navbar-inverse">
@@ -11,7 +25,7 @@ const Navbar = () => {
             className="navbar-toggle"
             data-toggle="collapse"
             data-target="#myNavbar"
-            onClick={()=>setNavToggle(!navtoggle)}
+            onClick={() => setNavToggle(!navtoggle)}
           >
             <span className="icon-bar"></span>
             <span className="icon-bar"></span>
@@ -20,56 +34,40 @@ const Navbar = () => {
         </div>
         <div
           className={
-            navtoggle == true
+            navtoggle === true
               ? "collapse navbar-collapse in"
               : "collapse navbar-collapse"
           }
           id="myNavbar"
-          aria-expanded={navtoggle == true ? "true" : "false"}
+          aria-expanded={navtoggle === true ? "true" : "false"}
         >
           <ul className="nav navbar-nav">
-            <li className="active">
-              <a href="index.html">Home</a>
+            <li>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a id="ContentPlaceHolder2_HyperLink7" href="news.html">
-                News
-              </a>
+              <Link to="/news">News</Link>
             </li>
             <li>
-              <a id="ContentPlaceHolder2_HyperLink12" href="gallery.html">
-                Gallery
-              </a>
+              <Link to="/gallery">Gallery</Link>
             </li>
             <li>
-              <a id="ContentPlaceHolder2_HyperLink1" href="videos.html">
-                Videos
-              </a>
+              <Link to="/videos">Videos</Link>
             </li>
             <li>
-              <a id="ContentPlaceHolder2_HyperLink2" href="sports.html">
-                Sports
-              </a>
+              <Link to="/sports">Sports</Link>
             </li>
             <li>
-              <a id="ContentPlaceHolder2_HyperLink3" href="scholarship.html">
-                ScholarShip
-              </a>
+              <Link to="/scholoships">Scholarships</Link>
             </li>
             <li>
-              <a id="ContentPlaceHolder2_HyperLink4" href="worksheet.html">
-                Work Sheets
-              </a>
+              <Link to="/worksheets">Worksheets</Link>
             </li>
             <li>
-              <a id="ContentPlaceHolder2_HyperLink10" href="ContactUs.html">
-                Contact
-              </a>
+              <Link to="/contactus">ContactUs</Link>
             </li>
             <li>
-              <a id="ContentPlaceHolder2_HyperLink11" href="AboutUs.html">
-                About
-              </a>
+              <Link to="/aboutus">AboutUs</Link>
             </li>
           </ul>
           <ul className="nav navbar-nav navbar-right">
