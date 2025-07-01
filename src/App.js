@@ -15,6 +15,7 @@ import Layout from "./pages/Layout";
 import UserWidgets from "./components/DashboardComponents/UserWidgets";
 import FlashNews from "./components/DashboardComponents/FlashNews";
 import "./App.css";
+import AboutData from "./components/DashboardComponents/AboutComponents/Index";
 const App = () => {
   const [auth, setAuth] = useState(() => {
     const storedAuth = localStorage.getItem("auth");
@@ -70,6 +71,7 @@ const App = () => {
           >
             <Route index element={<UserWidgets />} />
             <Route path="/dashboard/flash-news" element={<FlashNews />} />
+            <Route path="/dashboard/aboutus-data" element={<AboutData />} />
           </Route>
         </Routes>
       </BrowserRouter>

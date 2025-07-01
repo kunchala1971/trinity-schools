@@ -25,7 +25,7 @@ const Sidebar = ({ userRole }) => {
         <button className="hamburger" onClick={toggleSidebar}>
           ☰
         </button>
-        {!collapsed && <span className="sidebar-title">Auto Fin App</span>}
+        {!collapsed && <span className="sidebar-title">Trinity</span>}
       </div>
 
       <ul className="sidebar-list">
@@ -41,10 +41,11 @@ const Sidebar = ({ userRole }) => {
               onClick={() => handleItemClick(index)}
             >
               <span className="icon">{item.icon}</span>
-              {!collapsed && <span className="label">{item.label}</span>}
+              {!collapsed && <span className="label"> <Link className="sub-item" to={item.path}>{item.label}</Link></span>}
               {!collapsed && item.subMenu.length > 0 && (
                 <span className="arrow">▶</span>
               )}
+              
             </button>
 
             {item.subMenu.length > 0 && (

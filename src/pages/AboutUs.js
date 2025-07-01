@@ -4,7 +4,7 @@ const AboutUs = () => {
   const [data,setData]=useState([]);
   console.log(about);
   useEffect(() => {
-    fetch("http://localhost/founders.php")
+    fetch("http://localhost/api/founders.php")
       .then((response) => response.json())
       .then((data) => setData(data));
   },[]);

@@ -10,7 +10,7 @@ const menu = [
   },
   {
     label: "Flash News",
-    path: "/flash-news",
+    path: "/dashboard/flash-news",
     icon: "📜",
     roles: ["admin"],
     subMenu: [],
@@ -18,7 +18,7 @@ const menu = [
   },
     {
     label: "Scrolling Message",
-    path: "/scrolling-message",
+    path: "/dashboard//scrolling-message",
     icon: "📜",
     roles: ["admin"],
     subMenu: [],
@@ -39,7 +39,7 @@ const menu = [
         label: "Aboutus Data",
         path: "/dashboard/aboutus-data",
         roles: ["admin"],
-        page: "AboutUsData",
+        page: "AboutUs",
       },
        {
         label: "Contact Us Data",
